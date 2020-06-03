@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<style>
+
+.result {
+    margin: auto;
+    width: 100%;
+    border: 10px solid #ccc;
+}
+</style>
+
+<head>
+    <title>Text Summarizer</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+   <h2>Text Summarizer</h2>
+    <table>
+        <tr>
+            <p>Copy and paste your text into the box:</p>
+            <textarea name="text_sum" type="text" maxlength="50000" size="5000" style="width:600px;height:250px"></textarea>
+        </tr>
+        <tr>
+            <td><input type="submit" </td>
+            <td></td>
+        </tr>
+    </table>
+</form>
+<br>
+<div class="result">
+    {% if result %}
+   		<p style="font-size:50px">{{ result }}</p>
+        {% for variable, value in original_input.items() %}
+            <br/>{{ variable }}</b> : {{ value }}
+        {% endfor %}
+    {% endif %}
+
+</div>
+
+</html>
