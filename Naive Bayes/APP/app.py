@@ -9,7 +9,7 @@ import gensim
 import os
 from sklearn import preprocessing
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 # Initialise the Flask app
 app = flask.Flask(__name__, template_folder='templates')
