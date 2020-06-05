@@ -24,19 +24,19 @@ y_val_n= encoder.transform(y_val)
 
 report = open("Thamso.txt",'w')
 
-for n in range(1,10,1):
+for n in range(1,3,1):
 	print("running on min_df = "+str(n))
-	for k in range(1,10,1):
+	for k in range(4,6,1):
 		h = 0.05*k
 		print("running on max_df = "+str(h))
-		tfidf_vect=TfidfVectorizer(analyzer='word', min_df=n, max_df=h, sublinear_tf= False )
+		tfidf_vect=TfidfVectorizer(analyzer='word', min_df=n, max_df=h, sublinear_tf=True )
 		tfidf_vect.fit(X_train)
 		X_train_tfidf= tfidf_vect.transform(X_train)
 		X_val_tfidf= tfidf_vect.transform(X_val)
 
 		for i in range(1,10,1):
 
-			j=0.01*i
+			j=0.1*i
 			print("running on alpha = "+str(j))
 			# Mô hình Naive Bayes
 			model=MultinomialNB(alpha=j)
