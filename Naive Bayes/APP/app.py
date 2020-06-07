@@ -44,7 +44,6 @@ def main():
         y_test = loaded_model.predict_proba(X_test_n)
 
         a=np.array(y_test)
-        a=a*100
 
     
         # Render the form again, but add in the prediction and remind user
